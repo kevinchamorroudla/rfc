@@ -6,6 +6,7 @@
 package com.udla.rfc.ejb;
 
 import com.udla.rfc.model.Funcionario;
+import com.udla.rfc.viewModels.FuncionarioViewModel;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -29,5 +30,7 @@ public interface FuncionarioFacadeLocal {
     List<Funcionario> findRange(int[] range);
 
     int count();
+    
+    List<FuncionarioViewModel> findAllFuncionarios();
     
 }

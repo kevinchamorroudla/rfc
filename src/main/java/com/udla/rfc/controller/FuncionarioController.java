@@ -6,20 +6,14 @@ import com.udla.rfc.model.Area;
 import com.udla.rfc.model.Persona;
 import com.udla.rfc.model.Funcionario;
 import com.udla.rfc.model.FuncionarioPK;
+import com.udla.rfc.viewModels.FuncionarioViewModel;
 import java.io.Serializable;
+import java.util.List;
+import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
-
-import static javax.faces.annotation.FacesConfig.Version.JSF_2_3;
-
-import javax.faces.annotation.FacesConfig;
-
-@FacesConfig(
-        // Activates CDI build-in beans
-        version = JSF_2_3
-)
 
 @Named
 @ViewScoped
@@ -38,10 +32,12 @@ public class FuncionarioController implements Serializable{
     private Persona persona;
     private Funcionario funcionario;
     private Area area;
+    private List<FuncionarioViewModel> funcionarios;
     
     @PostConstruct
     public void init() {
-        System.out.println("Entro INIT");
+        getAllFuncionarios();
+        //System.out.println(getFuncionarios());
         persona = new Persona();
         area = new Area();
         area.setIdArea(1);
@@ -71,6 +67,14 @@ public class FuncionarioController implements Serializable{
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+
+    public List<FuncionarioViewModel> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public void setFuncionarios(List<FuncionarioViewModel> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
     
     public void nuevoFuncionario(){
         try {
@@ -87,6 +91,17 @@ public class FuncionarioController implements Serializable{
             funcionario.setPersona(personaInsertada);
             funcionario.setPersona1(personaInsertada);
             funcionarioEJB.create(funcionario);
+            getAllFuncionarios();
+        } catch (Exception e) {
+        }
+    }
+    
+    public void getAllFuncionarios(){
+        try {
+            List<Funcionario> lFuncionarios = funcionarioEJB.findAll();
+            this.funcionarios = lFuncionarios.stream().map(x -> new FuncionarioViewModel(
+                    x.getPersona1().getCedula(), x.getPersona1().getNombre(), x.getPersona1().getApellido(), x.getArea().getNombre(), x.getArea().getDescripcion()
+            )).collect(Collectors.toList());
         } catch (Exception e) {
         }
     }

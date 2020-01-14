@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>RFC</title>
+    </h:head>
+    <h:body>
+        <h:form id="formFuncionario">
+            <p:commandButton value="Nuevo Funcionario" action="#{funcionarioController.nuevoFuncionario()}" update="formFuncionario"/>
+            
+            <p:panel header="Funcionario">    
+                <h:outputLabel value="Cedula " /> 
+                <h:inputText value="#{funcionarioController.cedula}" />
+                <br />
+                <h:outputLabel value="Nombre " /> 
+                <h:inputText value="#{funcionarioController.nombre}" />
+                <br />
+                <h:outputLabel value="Apellido " /> 
+                <h:inputText value="#{funcionarioController.apellido}" />
+                <br />
+            </p:panel>
+            <p:separator />
+            <p:dataTable var="funcionario" value="#{funcionarioController.funcionarios}">
+                <p:column headerText="Cedula">
+                    <h:outputText value="#{funcionario.cedula}" />
+                </p:column>
+
+                <p:column headerText="Nombre">
+                    <h:outputText value="#{funcionario.nombre}" />
+                </p:column>
+
+                <p:column headerText="Apellido">
+                    <h:outputText value="#{funcionario.apellido}" />
+                </p:column>
+
+                <p:column headerText="A. Nombre">
+                    <h:outputText value="#{funcionario.areaNombre}" />
+                </p:column>
+
+                <p:column headerText="A. Descripcion">
+                    <h:outputText value="#{funcionario.areaDescripcion}" />
+                </p:column>
+            </p:dataTable>
+        </h:form>
+
+    </h:body>
+</html>

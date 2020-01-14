@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /home/andrestinkin/Documents/udla/software3/request-for-change/rfc/src/main/java/com/udla/rfc/ejb/AbstractFacade.java
 /home/andrestinkin/Documents/udla/software3/request-for-change/rfc/src/main/java/com/udla/rfc/ejb/RequerimientoFacadeLocal.java
 /home/andrestinkin/Documents/udla/software3/request-for-change/rfc/src/main/java/com/udla/rfc/ejb/ServicioFacade.java
@@ -22,3 +23,30 @@
 /home/andrestinkin/Documents/udla/software3/request-for-change/rfc/src/main/java/com/udla/rfc/model/FuncionarioPK.java
 /home/andrestinkin/Documents/udla/software3/request-for-change/rfc/src/main/java/com/udla/rfc/model/Funcionario.java
 /home/andrestinkin/Documents/udla/software3/request-for-change/rfc/src/main/java/com/udla/rfc/ejb/AreaFacadeLocal.java
+=======
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\model\ServicioRequerimientoPK.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\ejb\AbstractFacade.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\ejb\ServicioFacadeLocal.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\ejb\ServicioFacade.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\ejb\PersonaFacadeLocal.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\ejb\ServicioRequerimientoFacadeLocal.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\model\Requerimiento.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\model\ServicioRequerimiento.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\ejb\AreaFacadeLocal.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\model\FuncionarioPK.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\viewModels\RequerimientoViewModel.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\model\Persona.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\controller\FuncionarioController.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\ejb\AreaFacade.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\ejb\FuncionarioFacade.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\model\Funcionario.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\ejb\RequerimientoFacadeLocal.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\ejb\PersonaFacade.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\model\Area.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\controller\RequerimientoController.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\ejb\ServicioRequerimientoFacade.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\viewModels\FuncionarioViewModel.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\ejb\FuncionarioFacadeLocal.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\model\Servicio.java
+C:\Users\Kevin\Documents\NetBeansProjects\RFC\src\main\java\com\udla\rfc\ejb\RequerimientoFacade.java
+>>>>>>> 92e985c61d71d0f3a04431f73c36178c37252651
