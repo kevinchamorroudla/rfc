@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Request For Change Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:messages id="msg" showDetail="true">
+                <p:autoUpdate />
+            </p:messages>
+            <h:panelGrid columns="2">
+                <p:outputLabel for="txtUsuario" value="Usuario" />
+                <p:inputText id="txtUsuario" value="#{loginController.usuario.username}" required="true" />
+                
+                <p:outputLabel for="txtClave" value="Clave" />
+                <p:password id="txtClave" value="#{loginController.usuario.password}" required="true" />
+                
+                <h:column />
+                <p:commandButton icon="ui-icon-key" value="Iniciar Sesion" action="#{loginController.iniciarSesion()}"/>
+            </h:panelGrid>
+            <p:separator />
+            <p:link value="Crear Cuenta" outcome="index"/>
+        </h:form>
+    </h:body>
+</html>
