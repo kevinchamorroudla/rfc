@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.udla.rfc.ejb;
-
+import com.udla.rfc.viewModels.FuncionarioViewModel;
 import com.udla.rfc.model.Funcionario;
 import java.util.List;
 import javax.ejb.Local;
@@ -32,4 +32,5 @@ public interface FuncionarioFacadeLocal {
     
     Funcionario iniciarSesion(Funcionario usr);
     
+    List<FuncionarioViewModel> findAllFuncionarios();
 }
