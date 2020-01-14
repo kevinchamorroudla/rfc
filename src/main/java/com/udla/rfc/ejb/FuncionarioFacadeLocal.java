@@ -30,4 +30,6 @@ public interface FuncionarioFacadeLocal {
 
     int count();
     
+    Funcionario iniciarSesion(Funcionario usr);
+    
 }

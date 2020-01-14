@@ -15,6 +15,8 @@ import javax.inject.Named;
 import static javax.faces.annotation.FacesConfig.Version.JSF_2_3;
 
 import javax.faces.annotation.FacesConfig;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 
 @FacesConfig(
         // Activates CDI build-in beans
@@ -32,51 +34,36 @@ public class FuncionarioController implements Serializable{
     @EJB
     private FuncionarioFacadeLocal funcionarioEJB;
     
-    private String cedula;
-    private String nombre;
-    private String apellido;
     private Persona persona;
     private Funcionario funcionario;
     private Area area;
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
     
     @PostConstruct
     public void init() {
-        System.out.println("Entro INIT");
         persona = new Persona();
         area = new Area();
         area.setIdArea(1);
         funcionario = new Funcionario();
     }
-
-    public String getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
     
     public void nuevoFuncionario(){
         try {
-            persona.setCedula(getCedula());
-            persona.setApellido(getApellido());
-            persona.setNombre(getNombre());
             Persona personaInsertada = personaEJB.insertar(persona);
             FuncionarioPK pkCompuesta = new FuncionarioPK();
             pkCompuesta.setIdArea(area.getIdArea());
@@ -87,7 +74,9 @@ public class FuncionarioController implements Serializable{
             funcionario.setPersona(personaInsertada);
             funcionario.setPersona1(personaInsertada);
             funcionarioEJB.create(funcionario);
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Registro exitoso"));
         } catch (Exception e) {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Error!"));
         }
     }
 }
